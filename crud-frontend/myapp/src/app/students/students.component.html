@@ -1,0 +1,50 @@
+<div class="container row">
+    <div class="col-sm-4">
+        <input type="text" class="form-control"placeholder="Search" #id>
+        <button type="button" class="btn btn-primary" (click)="getStudentById(id.value)" >Search Student</button>
+        {{student.name}}
+    </div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"*ngIf="check">
+      
+           
+           
+                <label for="exampleSelect1">Select Batch</label>
+                <select  [(ngModel)]="batchId" >
+                  <option  *ngFor="let batch of batchList; let y=index" [(ngValue)]='batch.id'>{{batch.name}}</option>
+                </select>
+                <button type="button" class="btn btn-primary" (click)="addStudentToBAtch(student.id)" >Add To Batch</button>
+              
+        
+        
+        
+       
+    </div>
+</div>
+
+
+
+<div class ="container jumbotron">
+  <ul class="list-group" >
+    <li class="list-group-item active">
+      STUDENTS
+      </li>
+      <li class="list-group-item "*ngFor="let student of studentList">
+        {{student.name}}</li>
+  </ul>
+</div>
+
+<div class="container jumbotron">
+    <h1>ADD STUDENT FORM</h1>
+    <div class="container">
+     
+      
+          <label for="name">Name</label>
+          <input #name type="text"  required>
+        </div>
+        <button type="submit" class="btn btn-success" (click)="addStudent(name.value)">Submit</button>
+       
+       
+   
+  </div>
+    

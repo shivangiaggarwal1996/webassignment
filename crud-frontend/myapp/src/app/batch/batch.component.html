@@ -1,0 +1,70 @@
+<div class="container  jumbotron">
+   
+      <div class="row">
+        <div class="col-lg-4">
+         <ul class="list-group" >
+            <li class="list-group-item active">
+              BATCHES
+              </li>
+              <li class="list-group-item" *ngFor="let batch of batchList">
+             
+              
+              <span>{{batch.name}}</span>
+           
+          
+              <button type="button" class="btn btn-primary"  [routerLink]="['/lectures', batch.id,courseId]">Show Lecture</button>
+              <button type="button" class="btn btn-primary" (click)="getStudents(batch.id)" >Show Students</button>
+            </li>
+          </ul>
+        
+        </div>
+      
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4">
+          <ul class="list-group" >
+              <li class="list-group-item active">
+               STUDENTS
+                </li>
+                <li class="list-group-item" *ngFor="let student of studentList">
+               
+               
+                <span>{{student.name}}</span>
+             
+            
+              
+              </li>
+            </ul>
+      </div>
+      </div>
+      
+        
+            
+                <h1>ADD BATCH</h1>
+               
+                 
+                 
+                   
+                      <label for="name">Name</label>
+                      <input #name type="text"  required>
+                 
+
+                     
+
+                    <button type="submit" class="btn btn-success" (click)="addBatch(name.value)">Submit</button>
+                   
+                   
+              
+             
+                
+        </div> 
+  
+
+
+
+
+
+        
+
+
+
+

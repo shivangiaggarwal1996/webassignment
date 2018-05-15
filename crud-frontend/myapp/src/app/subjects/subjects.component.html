@@ -1,0 +1,46 @@
+<div class="container  jumbotron">
+  
+        <ul class="list-group" >
+            <li class="list-group-item active">
+              SUBJECTS
+            </li>
+            <li class="list-group-item " *ngFor="let subject of subjectList">
+              <span>{{subject.name}}</span>
+            </li>
+          </ul>
+       
+                <h1>ADD SUBJECT </h1>
+                <div class="container jumbotron">
+                 
+                 
+                   
+                      <label for="name">Name</label>
+                      <input #name type="text"  required>
+                 
+                    <p></p>
+
+                   <p></p>
+                   
+                        <label for="exampleSelect1">Select Course</label>
+                        <select  [(ngModel)]="courseId" >
+                          <option  *ngFor="let course of courseList; let y=index" [(ngValue)]='course.id'>{{course.name}}</option>
+                        </select>
+  
+                   
+                        <p></p>
+
+                        <p></p>
+
+
+                    <button type="submit" class="btn btn-success" (click)="addSubject(name.value)">Submit</button>
+                   
+                   
+              
+               
+             
+                
+        </div> 
+  </div>
+
+
+
